@@ -1,8 +1,5 @@
-<img src="http://imgur.com/1ZcRyrc.png" style="float: left; margin: 20px; height: 55px">
-
-# DSI-SG-42
-## Capstone Project: Building a Personalised Playlist Generator for Spotify
-> Author: Syahiran Rafi
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Building a Personalised Playlist Generator for Spotify
+Individual submission by Syahiran Rafi
 
 ## Contents
 - [Executive Summary](#executive-summary)
@@ -42,20 +39,20 @@ This 'processed' data set — with approximately 40k tracks (or rows) — is the
 
 | Feature | Type | Description |
 |----------|------|--------------|
-| `track_name` | str | The name of the track. |
-| `artist_name` | str | The name of the artist(s) who performed the track. |
-| `artist_genres` | str | The genres associated with the artist. |
-| `danceability` | float | Describes how suitable a track is for dancing based on a combination of musical elements. |
-| `energy` | float | Represents a perceptual measure of intensity and activity in a track. |
-| `key` | int | The estimated key of the track, ranging from 0 (C) to 11 (B). |
-| `loudness` | float | The overall loudness of a track in decibels (dB). |
-| `mode` | int | Indicates the modality (major or minor) of a track, with 0 representing minor and 1 representing major. |
-| `speechiness` | float | Detects the presence of spoken words in a track. |
-| `acousticness` | float | A measure of whether a track is acoustic or not. |
-| `instrumentalness` | float | Predicts whether a track contains no vocals. |
-| `liveness` | float | Detects the presence of an audience in the recording. |
-| `valence` | float | Describes the musical positiveness conveyed by a track. |
-| `tempo` | float | The overall estimated tempo of a track in beats per minute (BPM). |
+| `track_name` | `str` | The name of the track. |
+| `artist_name` | `str` | The name of the artist(s) who performed the track. |
+| `artist_genres` | `str` | The genres associated with the artist. |
+| `danceability` | `float` | Describes how suitable a track is for dancing based on a combination of musical elements. |
+| `energy` | `float` | Represents a perceptual measure of intensity and activity in a track. |
+| `key` | `int` | The estimated key of the track, ranging from 0 (C) to 11 (B). |
+| `loudness` | `float` | The overall loudness of a track in decibels (dB). |
+| `mode` | `int` | Indicates the modality (major or minor) of a track, with 0 representing minor and 1 representing major. |
+| `speechiness` | `float` | Detects the presence of spoken words in a track. |
+| `acousticness` | `float` | A measure of whether a track is acoustic or not. |
+| `instrumentalness` | `float` | Predicts whether a track contains no vocals. |
+| `liveness` | `float` | Detects the presence of an audience in the recording. |
+| `valence` | `float` | Describes the musical positiveness conveyed by a track. |
+| `tempo` | `float` | The overall estimated tempo of a track in beats per minute (BPM). |
 
 ## Exploratory Data Analysis
 #### User Journey
@@ -145,27 +142,25 @@ For further development of this recommender system, I suggest exploring the foll
         - This technique is often used in collaborative filtering systems. It decomposes the user-item rating matrix into lower-dimensional matrices, capturing latent factors that represent user preferences and item characteristics. These latent factors can be used to predict missing ratings (in this case, track genres) and generate recommendations.
 
 ## Files
-**Code**
+**code**
 - 01_Data_Collection.ipynb   
 - 02_EDA.ipynb
 - 03_Recommender.ipynb
 
-**Data**
+**data**
 - genres-10k.csv
 - spotify-34k.csv
 - spotify-40k-processed.csv
 - spotify-top-10k-processed.csv
 - spotify-top-10k.csv
 
-**Slides**
+**slides**
 - SG-DSI-42_CAPSTONE_PROJECT_05.pdf
 
-**README**
-- README.md
-
-**App**
+**app**
 - tracks-10k-processed.csv
 - banner.png
 - app.py
 
----
+**readme**
+- README.md
