@@ -13,7 +13,6 @@ Group submission by Chin Chung Yau, Ryan Yong, and Syahiran Rafi
 
 
 ## Background
----
 As Reddit unveiled its [IPO](https://www.businesstimes.com.sg/companies-markets/reddit-prices-ipo-top-indicated-range-raise-us-748-million) at the higher range of US$34 a share, public eye has begun to focus on Reddit. What was once considered a benefit to users, Reddit's loose content-moderation approach has turned into a [weakness by political hobbyists and social hackers](https://www.weforum.org/agenda/2017/06/fighting-the-rise-of-fake-news-means-taking-another-look-at-your-phone-this-is-why/), aimed to disseminate misinformation on America's 4th most visited website.
 
 Regarding misinformation, for the context of this project, it will follow [American Psychological Association](https://www.apa.org/topics/journalism-facts/misinformation-disinformation) (APA)'s classifcation as "any information that is demonstrably false or otherwise misleading, regardless of its source or intention." This is because fake news and satire articles are considered misinformation, deferring only in intention.
