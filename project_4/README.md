@@ -1,23 +1,16 @@
-<img src="http://imgur.com/1ZcRyrc.png" style="float: left; margin: 20px; height: 55px">
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 4: Managing the Prevalence of Diabetes in Singapore
+Group submission by Conrad Aw, Clarence Mun and Syahiran Rafi
 
-# DSI-SG-42
-## Project 4b: Managing the Prevalence of Diabetes in Singapore
-> Authors: Conrad Aw, Clarence Mun, Syahiran Rafi
----
-
-## Contents
----
 - [Executive Summary](#executive-summary)
 - [Problem Statement](#problem-statement)
 - [Data Collection](#data-collection)
 - [Data Dictionary](#data-dictionary)
 - [Data Cleaning, Preprocessing and EDA](#Data-Cleaning,-Preprocessing-and-EDA)
-- [Modelling](#Modelling)
+- [Modelling and Evaluation](#Modelling-and-Evaluation)
 - [Conclusion](#Conclusion)
 - [Recommendations](#Recommendations)
 
 ## Executive Summary
----
 Suppose you're part of a data science team at the Ministry of Health (MOH), ministry of the Government of Singapore responsible for managing the public healthcare system in Singapore. In recent discussions with healthcare providers, you've noticed growing health-consciousness around diabetes.
 
 With an emphasis on career-building in recent years, long working hours, high stress and irregular meals are the norm for the typical working adult in Singapore.
@@ -29,13 +22,11 @@ This scenario, while simplified, illustrates the growing health-consciousness re
 **Data science problem**: Develop a predictive model that accurately identifies individuals at high risk of developing diabetes, utilizing healthcare data to minimize false negatives (missed diagnoses) and false positives (unnecessary interventions), thereby enabling targeted and timely healthcare interventions.
 
 ## Problem Statement
----
 According to the Ministry of Health, about one in three Singaporeans has a lifetime risk of developing diabetes. To address this challenge, we propose developing a data-driven solution that utilises healthcare data and predictive analytics to identify individuals at high risk of developing diabetes.
 
 By leveraging classification algorithms and population health data, our solution aims to provide a risk assessment of diabetes for individuals to enable early detection and targeted intervention. Additionally, our solution also aims to equip individuals with the ability to make more informed nutritional choices by providing healthier suggestions for everyday food products. 
 
 ## Data Collection
----
 Source: https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?resource=download
 
 We have selected the following datasets from the above source:
@@ -56,53 +47,50 @@ In our initial exploration, we used both datasets #1 and #2 to evaluate model pe
 With these considerations, our team decided to proceed with dataset #1, as seen in this Part 2A notebook. The exploration using dataset #2 can be found in the part 2B notebook.
 
 ## Data Dictionary
----
 ### For raw data file 'diabetes_binary_5050split_health_indicators_BRFSS2015.csv':
 
 |Feature|Type|Description|
 |---|---|---|
-|Diabetes_binary|int64|Diabetic or non-diabetic with a value of 1 else 0|
-|HighBP|int64|Adults who have been told they have high blood pressure by a doctor, nurse, or other health professional with a value of 1 else 0|
-|HighChol|int64|Adults who have been told they have high cholestrol by a doctor, nurse, or other health professional with a value of 1 else 0|
-|CholCheck|int64|Cholesterol check within past five years with a value of 1 else 0|
-|BMI|int64|Body Mass Index (BMI)|
-|Smoker|int64|Smoked atleast 100 cigarettes in life with a value of 1 else 0|
-|Stroke|int64|Ever told they had a stroke with a value of 1 else 0|
-|HeartDiseaseorAttack|int64|Coronary heart diease or myocardial infarction with a value of 1 else 0|
-|Fruits|int64|Consume Fruit once or more times per day with a value of 1 else 0|
-|Veggies|int64|Consume Vegetables once or more times per day with a value of 1 else 0|
-|HvyAlcoholConsump|int64|Heavy drinkers with a value of 1 else 0 (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)|
-|AnyHealthcare|int64|Have any kind of health care coverage with a value of 1 else 0|
-|NoDocbcCost|int64| Unable to see a doctor when needed to in the past 12 months because of cost with a value of 1 else 0|
-|GenHlth|int64|Individuals rating their own general health on a scale of 1-5 (1 = excellent 2 = very good 3 = good 4 = fair 5 = poor)|
-|MentHlth|int64|Individuals rating their own mental health on a scale of 1 - 30 days based on how many days they experienced stress, depression, and problems with emotions during the past 30 days (scale 1-30 days)|
-|PhysHlth|int64|Individuals rating their own physical health on a scale of 1 -30 days based on how many days they were physically ill or injured during the past 30 days (scale 1-30 days)|
-|DiffWalk|int64|Serious difficulty walking or climbing stairs with a value of 1 else 0|
-|Sex|int64|Gender (0 for female, 1 for male)|
-|Age|int64|13-level age category from 18 years old to 80+ years|
-|Education|int64|Education level on a scale of scale 1-6 (1 = Never attended school or only kindergarten 2 = Grades 1 through 8 (Elementary) 3 = Grades 9 through 11 (Some high school) 4 = Grade 12 or GED (High school graduate) 5 = College 1 year to 3 years (Some college or technical school) 6 = College 4 years or more (College graduate))|
-|Income|int64|Income on a scale of 1-8 (1 = less than $10,000 5 = less than $35,000 8 = $75,000 or more)|
+|`Diabetes_binary`|`int`|Diabetic or non-diabetic with a value of 1 else 0|
+|`HighBP`|`int`|Adults who have been told they have high blood pressure by a doctor, nurse, or other health professional with a value of 1 else 0|
+|`HighChol`|`int`|Adults who have been told they have high cholestrol by a doctor, nurse, or other health professional with a value of 1 else 0|
+|`CholCheck`|`int`|Cholesterol check within past five years with a value of 1 else 0|
+|`BMI`|`int`|Body Mass Index (BMI)|
+|`Smoker`|`int`|Smoked atleast 100 cigarettes in life with a value of 1 else 0|
+|`Stroke`|`int`|Ever told they had a stroke with a value of 1 else 0|
+|`HeartDiseaseorAttack`|`int`|Coronary heart diease or myocardial infarction with a value of 1 else 0|
+|`Fruits`|`int`|Consume Fruit once or more times per day with a value of 1 else 0|
+|`Veggies`|`int`|Consume Vegetables once or more times per day with a value of 1 else 0|
+|`HvyAlcoholConsump`|`int`|Heavy drinkers with a value of 1 else 0 (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)|
+|`AnyHealthcare`|`int`|Have any kind of health care coverage with a value of 1 else 0|
+|`NoDocbcCost`|`int`| Unable to see a doctor when needed to in the past 12 months because of cost with a value of 1 else 0|
+|`GenHlth`|`int`|Individuals rating their own general health on a scale of 1-5 (1 = excellent 2 = very good 3 = good 4 = fair 5 = poor)|
+|`MentHlth`|`int`|Individuals rating their own mental health on a scale of 1 - 30 days based on how many days they experienced stress, depression, and problems with emotions during the past 30 days (scale 1-30 days)|
+|`PhysHlth`|`int`|Individuals rating their own physical health on a scale of 1 -30 days based on how many days they were physically ill or injured during the past 30 days (scale 1-30 days)|
+|`DiffWalk`|`int`|Serious difficulty walking or climbing stairs with a value of 1 else 0|
+|`Sex`|`int`|Gender (0 for female, 1 for male)|
+|`Age`|`int`|13-level age category from 18 years old to 80+ years|
+|`Education`|`int`|Education level on a scale of scale 1-6 (1 = Never attended school or only kindergarten 2 = Grades 1 through 8 (Elementary) 3 = Grades 9 through 11 (Some high school) 4 = Grade 12 or GED (High school graduate) 5 = College 1 year to 3 years (Some college or technical school) 6 = College 4 years or more (College graduate))|
+|`Income`|`int`|Income on a scale of 1-8 (1 = less than $10,000 5 = less than $35,000 8 = $75,000 or more)|
 
 ## Data Cleaning, Preprocessing and EDA
----
 The following variable labels were adjusted based on the detailed data dictionary for better clarity in the plots:
 
 |Feature|Type|Description|
 |---|---|---|
-|GenHlth_Label|int64|1: 'Excellent', 2: 'Very Good', 3: 'Good', 4: 'Fair', 5: 'Poor'|
-|Age_Label|int64|1: '18-24', 2: '25-29', 3: '30-34', 4: '35-39', 5: '40-44', 6: '45-49', 7: '50-54', 8: '55-59', 9: '60-64', 10: '65-69', 11: '70-74', 12: '75-79', 13: '80+', 14: 'Unknown'|
-|Income_Label|int64|1: '<$15,000', 2: '$15,000-$24,999', 3: '$25,000-$34,999', 4: '$35,000-$49,999', 5: '≥$50,000', 9: 'Unknown'|
-|Education_Label|int64|1: 'Did not graduate High School', 2: 'Graduated High School', 3: 'Attended College/Technical School', 4: 'Graduated College/Technical School', 9: 'Unknown'|
+|`GenHlth_Label`|`int`|1: 'Excellent', 2: 'Very Good', 3: 'Good', 4: 'Fair', 5: 'Poor'|
+|`Age_Label`|`int`|1: '18-24', 2: '25-29', 3: '30-34', 4: '35-39', 5: '40-44', 6: '45-49', 7: '50-54', 8: '55-59', 9: '60-64', 10: '65-69', 11: '70-74', 12: '75-79', 13: '80+', 14: 'Unknown'|
+|`Income_Label`|`int`|1: '<$15,000', 2: '$15,000-$24,999', 3: '$25,000-$34,999', 4: '$35,000-$49,999', 5: '≥$50,000', 9: 'Unknown'|
+|`Education_Label`|`int`|1: 'Did not graduate High School', 2: 'Graduated High School', 3: 'Attended College/Technical School', 4: 'Graduated College/Technical School', 9: 'Unknown'|
 
 The following interaction terms were created:
 
 |Feature|Type|Description|
 |---|---|---|
-|BMI_HighBP_interaction|int64|Individuals with a high BMI might experience a more significant increase in blood pressure compared to those with a normal BMI.|
-|Age_PhysActivity_interaction|int64|Older individuals might respond differently to physical activity due to age-related physiological changes.|
+|`BMI_HighBP_interaction`|`int`|Individuals with a high BMI might experience a more significant increase in blood pressure compared to those with a normal BMI.|
+|`Age_PhysActivity_interaction`|`int`|Older individuals might respond differently to physical activity due to age-related physiological changes.|
 
 ## Modelling
----
 Models used for tuning and selection
 - Logistics Regression
 - Random Forest
@@ -113,7 +101,6 @@ Models used for tuning and selection
 - Neural Network
     
 ### Model scores
----
 |Model                     |Train Score    |Test Score    |Cross-Validation Score|
 -----------------------|--------------|-------------|------------------------|
 |Logistic Regression          |0.747476      |0.745385         |0.74767|
@@ -134,8 +121,7 @@ Models used for tuning and selection
 |Support Vector Machine    |0.741566     |0.71666        |0.798981       |0.684158    |0.755585|
 |Neural Network            |0.746941     |0.709871       |0.835196       |0.658699    |0.767451|
 
-### Model Selection: Neural Network
----
+### Model Selection: Neural Network (MLPClassifier)
 By comparing Train Scores with Cross-Validation Scores, we can eliminate "Random Forest" and "Decision Tree" as they both show evidence of overfitting (Train Score is much greater than CV Score).
 
 For Sensitivity, we can consider the top two models "Support Vector Machine" and "Neural Network" -- both of which have Sensitivity scores greater than 0.79.
@@ -145,7 +131,6 @@ For Sensitivity, we can consider the top two models "Support Vector Machine" and
 With the above analysis, we have selected Neural Network as our model before Hyperparameter turning
 
 ### Hyperparameter turning for Neural Network
----
 We performed both `GridSearchCV` and `RandomSearchCV`.
 - `GridSearchCV` performs an exhaustive search over all combinations of hyperparameters specified in a grid.
 - `RandomSearchCV` randomly samples hyperparameter combinations from specified distributions or ranges.
@@ -177,7 +162,6 @@ While there is a drop in `Sensitivity` after tuning, the post-tuning `Sensitivit
 On the other hand, three other performance metrics -- `Accuracy`, `Precision` and `Specificity` -- increased, making the model more well-balanced overall.
 
 ## Conclusion
----
 While `Sensitivity` has remained largely constant at 0.805, `Precision` has suffered significantly, dropping from 0.722 to 0.295. This means that our model is highly sensitive to False Positives.
 
 In the context of our problem, individuals who may have lower to no risk of diabetes may still be flagged as being of higher risk. For a disease detection model, having low precision may not be ideal due to ethical concerns related to false diagnoses.
@@ -185,7 +169,6 @@ In the context of our problem, individuals who may have lower to no risk of diab
 While our model does not claim to formally diagnose diabetes, a balance of `Sensitivity` and `Precision` should ultimately be sought for the model to be serviceable to the general public.
 
 ## Recommendations
----
 For future consideration, here are some ways in which the precision of a binary classification model could be improved.
 
 1. **Feature Selection and Engineering:** To build a more robust model, we could gather more relevant data from local participants/patients to train the model. (The original dataeset is from the US.) This may allow us to go deeper with feature engineering like creating new features (e.g., interaction terms, polynomial features) or transforming existing features to provide more discriminatory power to the model, potentially improving precision.
@@ -194,25 +177,32 @@ For future consideration, here are some ways in which the precision of a binary 
 
 Implementing these strategies while monitoring the impact on precision can help build a more effective diabetes detection model. It's important to experiment and iteratively refine the model based on performance feedback to achieve the desired balance of sensitivity and precision levels.
 
----
+## Files
 
-### Files
-
-**Code**
+**code**
 - 01_Cleaning_and_EDA.ipynb   
 - 02A_Modelling_Evaluation_and_Conclusion.ipynb
 - 02B_Modelling_Imbalanced_Trial.ipynb
 - 02C_Modelling_Tensorflow_Trial.ipynb
 
-**Datasets**
+**data**
 - diabetes_binary_5050split_health_indicators_BRFSS2015.csv
 - diabetes_binary_health_indicators_BRFSS2015.csv
-- diabetes_012_health_indicators_BRFSS2015.csv (not used)
+- diabetes_012_health_indicators_BRFSS2015.csv
 
-**Slides**
+**slides**
 - SG-DSI-42_PROJECT_04_GRP_02.pdf
 
 **README**
 - README.md
 
----
+**app**
+- myhealthapp.py
+- tuned_models_gs.pkl
+- requirements.txt
+- test_minute_maid_pink_lemonade.png
+- test_pokka_oolong_tea.jpg
+- test_pokka_peach_tea.jpeg
+- test_yeos_iced_lemon_tea.jpeg
+- diabetes_banner.jpg
+- nutrigrade_banner.jpg
