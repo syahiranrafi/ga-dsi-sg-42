@@ -1,14 +1,14 @@
 <img src="http://imgur.com/1ZcRyrc.png" style="float: left; margin: 20px; height: 55px">
 
-# DSI-SG-42
+# DSI-SG-42: Data Science Immersive
 <b>Name:</b> Syahiran Rafi
 <br>
 <b>Course Duration:</b> Feb-May 2024
 <br>
 <b>Instructors:</b> Waseem Sheriff, Farhan Rais, Sharifah Nurulhuda Alhabsyi
 
-## Data Science Immersive
-> This repository contains the labs and projects completed in fulfilment of the graduation requirements for General Assembly's Data Science Immersive (Singapore).
+## Description
+This repository contains the labs and projects completed in fulfilment of the graduation requirements for General Assembly's Data Science Immersive (Singapore).
 
 ## Projects
 | No. | Title | Description | Skills |
